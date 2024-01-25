@@ -17,11 +17,8 @@ jobs:
         run: docker-compose up -d
       - name: Wait for database to be ready
         run: |
-          while ! nc -w 1 postgres 5432; do
-            echo "Waiting for PostgreSQL..."
-            sleep 1
-          done
+          timeout 60 sh -c 'until nc -w 1 localhost 5432; do echo "Waiting for PostgreSQL..."; sleep 1; done'
       - name: Call healthz endpoint
-        run: curl -f http://localhost:3000/healthz || exit 1
+        run: curl -f http://pg-node-react-jest-postgres-1:3000/healthz || exit 1
       - name: Stop containers
         run: docker-compose down

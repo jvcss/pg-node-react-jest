@@ -1,4 +1,4 @@
-<img alt="Tests Passing" src="https://github.com/jvcss/pg-node-react-jest/workflows/Test/badge.svg" />
+[![Run Jest tests in Docker Compose](https://github.com/jvcss/pg-node-react-jest/actions/workflows/node.js.yml/badge.svg?branch=master&event=status)](https://github.com/jvcss/pg-node-react-jest/actions/workflows/node.js.yml)
 
 # Node.js CRUDE API with PostgreSQL
 This is a simple Node.js CRUD (Create, Read, Update, Delete) API that uses PostgreSQL as the database.
