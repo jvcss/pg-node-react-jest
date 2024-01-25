@@ -1,4 +1,4 @@
-<img alt="Tests Passing" src="https://github.com/jvcss/github-readme-stats/workflows/Test/badge.svg" />
+<img alt="Tests Passing" src="https://github.com/jvcss/pg-node-react-jest/workflows/Test/badge.svg" />
 
 # Node.js CRUDE API with PostgreSQL
 This is a simple Node.js CRUD (Create, Read, Update, Delete) API that uses PostgreSQL as the database.
