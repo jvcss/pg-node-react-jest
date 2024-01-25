@@ -3,6 +3,7 @@ version: '3'
 services:
   postgres:
     image: postgres:13
+    restart: always
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
@@ -17,6 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     environment:
       PGHOST: postgres
       PGUSER: postgres
@@ -32,6 +34,7 @@ services:
     build: 
       context: ./docs/
       dockerfile: Dockerfile
+    restart: always
     ports:
       - "3001:80"
     depends_on:
