@@ -1,0 +1,639 @@
+{
+	"info": {
+		"_postman_id": "c1d4bfc8-048b-4100-9cd8-249d20730eb0",
+		"name": "ClientAPI_Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4253312"
+	},
+	"item": [
+		{
+			"name": "Create Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"fullName\": \"Nome \",\r\n\"email\": \"testes@gmail.com\",\r\n\"telefone\": \"11999999999\",\r\n\"coordinates\": [\"-15.7801\",\"-47.9292\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Create Client",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"fullName\": \"Nome \",\r\n\"email\": \"testes@gmail.com\",\r\n\"telefone\": \"11999999999\",\r\n\"coordinates\": [\"-15.7801\",\"-47.9292\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-avl3cb7yDFy1eA3H4VapLjN6hp8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 12:28:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client created successfully\",\n    \"client\": {\n        \"id\": 1,\n        \"full_name\": \"Nome \",\n        \"email\": \"testes@gmail.com\",\n        \"telefone\": \"11999999999\",\n        \"coordinates\": {\n            \"x\": -15.7801,\n            \"y\": -47.9292\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/clients/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"13"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Search Client",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "133"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"85-wEu7aG4lVuQ49chrHywnpoAx4fg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 12:28:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"client\": {\n        \"id\": 1,\n        \"full_name\": \"Nome \",\n        \"email\": \"testes@gmail.com\",\n        \"telefone\": \"11999999999\",\n        \"coordinates\": {\n            \"x\": -15.7801,\n            \"y\": -47.9292\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit Client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"fullName\": \"Nome \",\r\n\"email\": \"testes@gmail.com\",\r\n\"telefone\": \"00999999999\",\r\n\"coordinates\": {\r\n    \"x\": 123.456,\r\n    \"y\": 789.012\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/clients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Edit Client",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"fullName\": \"Nome \",\r\n\"email\": \"testes@gmail.com\",\r\n\"telefone\": \"00999999999\",\r\n\"coordinates\": {\r\n    \"x\": 123.456,\r\n    \"y\": 789.012\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ab-n86pa1df9zWgQ9N1zxfh4hvRxMU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 12:37:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client updated successfully\",\n    \"client\": {\n        \"id\": 1,\n        \"full_name\": \"Nome \",\n        \"email\": \"testes@gmail.com\",\n        \"telefone\": \"00999999999\",\n        \"coordinates\": {\n            \"x\": 123.456,\n            \"y\": 789.012\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Pageable List Clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/clients?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Pageable List Clients",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/clients?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "259"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"103-TRjkYdjh0UTMYNsuvmsp7t9cW1o\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 12:39:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"clients\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Nome \",\n            \"email\": \"testes@gmail.com\",\n            \"telefone\": \"00999999999\",\n            \"coordinates\": {\n                \"x\": 123.456,\n                \"y\": 789.012\n            }\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Nome 2\",\n            \"email\": \"testes2@gmail.com\",\n            \"telefone\": \"98999999999\",\n            \"coordinates\": {\n                \"x\": -10.7801,\n                \"y\": -40.9292\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Upload Massive Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/vitim/Documentos/sources/javascript/apps/node-client-api/tests/a_default.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/clients/import",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"import"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Upload Massive Data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/vitim/Documentos/sources/javascript/apps/node-client-api/tests/a_default.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/clients/import",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"import"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-xMVgH/KpskOOOAF+gTDicmJc7DA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 14:49:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"File imported successfully\",\n    \"clients\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/clients/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Delete Client",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/clients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b4-kmTle2YSpuT8Rkso76UZas+HaFY\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 14:52:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client deleted successfully\",\n    \"client\": {\n        \"id\": 3,\n        \"full_name\": \"John Doe\",\n        \"email\": \" john.doe@example.com\",\n        \"telefone\": \" 11999999999\",\n        \"coordinates\": {\n            \"x\": 16.6869,\n            \"y\": 49.2648\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Nearby",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/clients/40.7128/-74.0060/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"40.7128",
+						"-74.0060",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ie Search Nearby",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/clients/40.7128/-74.0060/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"40.7128",
+								"-74.0060",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "653"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28d-8Fl7+89LMWZM1zrrGzqrz3UGGs0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 Jan 2024 15:34:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nearbyClients\": [\n        {\n            \"id\": 1,\n            \"full_name\": \"Nome \",\n            \"email\": \"testes@gmail.com\",\n            \"telefone\": \"00999999999\",\n            \"coordinates\": {\n                \"x\": 123.456,\n                \"y\": 789.012\n            }\n        },\n        {\n            \"id\": 2,\n            \"full_name\": \"Nome 2\",\n            \"email\": \"testes2@gmail.com\",\n            \"telefone\": \"98999999999\",\n            \"coordinates\": {\n                \"x\": -10.7801,\n                \"y\": -40.9292\n            }\n        },\n        {\n            \"id\": 7,\n            \"full_name\": \"John Doe\",\n            \"email\": \" john.doe2@example.com\",\n            \"telefone\": \" 11999999999\",\n            \"coordinates\": {\n                \"x\": 16.6869,\n                \"y\": 49.2648\n            }\n        },\n        {\n            \"id\": 8,\n            \"full_name\": \"Jane Doe\",\n            \"email\": \" jane.doe@example.com\",\n            \"telefone\": \" 11999999998\",\n            \"coordinates\": {\n                \"x\": 22.9068,\n                \"y\": 43.1729\n            }\n        },\n        {\n            \"id\": 12,\n            \"full_name\": \"Nome 2\",\n            \"email\": \"testes20@gmail.com\",\n            \"telefone\": \"11999999993\",\n            \"coordinates\": {\n                \"x\": -77.7801,\n                \"y\": -77.9292\n            }\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

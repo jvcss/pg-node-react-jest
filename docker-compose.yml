@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: clients
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/create-clients-db.sql:/docker-entrypoint-initdb.d/init.sql
+
+  nodejs-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PGHOST: postgres
+      PGUSER: postgres
+      PGDATABASE: clients
+      PGPASSWORD: postgres
+      PGPORT: 5432
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  reactjs-app:
+    build: 
+      context: ./docs/
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"
+    depends_on:
+      - nodejs-server
+
+volumes:
+  postgres-data:

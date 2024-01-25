@@ -1,0 +1,44 @@
+{
+  "name": "client-api",
+  "version": "1.0.0",
+  "description": "an API using Node.js to manage clients",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest flow.test.js --verbose",
+    "faker": "jest faker.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvcss/node-client-api.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "jvcss",
+  "bugs": {
+    "url": "https://github.com/jvcss/node-client-api/issues"
+  },
+  "homepage": "https://github.com/jvcss/node-client-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.3",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "multer": "1.4.5-lts.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testRegex": "/tests/.*\\.test\\.js$",
+    "testTimeout": 10000
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "jest": "^26.6.3",
+    "pg": "^8.11.3",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.2"
+  }
+}
