@@ -1,28 +1,29 @@
-name: Node.js CI with pnpm
-
+name: Run Jest tests with Docker Compose
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
-  build:
-
+  build-and-test:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-    - run: curl -fsSL https://get.pnpm.io/install.sh | sh -s -- --version latest
-    - run: pnpm install --frozen-lockfile
-    - run: pnpm run start --if-present
-    - run: pnpm test
+      - uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Build Docker images
+        run: docker-compose build
+      - name: Start containers in background
+        run: docker-compose up -d
+      - name: Wait for database to be ready
+        run: |
+          while ! nc -w 1 postgres 5432; do
+            echo "Waiting for PostgreSQL..."
+            sleep 1
+          done
+      - name: Install dependencies
+        run: npm install
+      - name: Run Jest tests
+        run: npm test
+      - name: Stop containers
+        run: docker-compose down
