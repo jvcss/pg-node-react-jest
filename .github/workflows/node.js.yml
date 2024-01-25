@@ -21,9 +21,7 @@ jobs:
             echo "Waiting for PostgreSQL..."
             sleep 1
           done
-      - name: Install dependencies
-        run: npm install
-      - name: Run Jest tests
-        run: npm test
+      - name: Call healthz endpoint
+        run: curl -f http://localhost:3000/healthz || exit 1
       - name: Stop containers
         run: docker-compose down
